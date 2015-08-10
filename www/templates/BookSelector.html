@@ -1,0 +1,24 @@
+<ion-view view-title="Select">
+    <ion-content>
+        <div class="row">
+            <div class="col col-75">
+                <button class="button button-block button-positive" ng-click="ResetSelect()">{{select.name}}</button>
+            </div>
+            <div class="col col-25">
+                <button class="button button-block button-positive" ng-click="SelectBook($parent.selectedBook.Division, $parent.selectedBook.Book)">{{chapter}}</button>
+            </div>
+        </div>
+        <div class="row" style="flex-wrap: wrap;" ng-if="select.state=='book'">
+            <div class="col col-33" ng-repeat="book in books">
+                <button ng-if="book.Division==1" class="button button-block button-light" ng-click="SelectBook(book.Division, book.Book)">{{book.ShortName}}</button>
+                <button ng-if="book.Division==2" class="button button-block button-stable" ng-click="SelectBook(book.Division, book.Book)">{{book.ShortName}}</button>
+            </div>
+        </div>
+        <div class="row" style="flex-wrap: wrap;" ng-if="select.state=='chapter'">
+            <div class="col col-25" ng-repeat="i in GetMaxChapters() track by $index">
+                <button class="button button-block button-light" ng-click="SelectChapter($index + 1)">{{$index + 1}}</button>
+            </div>
+        </div>
+    </ion-content>
+</ion-view>
+

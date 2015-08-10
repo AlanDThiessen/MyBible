@@ -1,0 +1,7 @@
+<ion-view view-title="{{bookName + ' ' + chapter}}">
+    <ion-content>
+        <div class="padding">
+            <div ng-repeat="verse in verses" ng-bind-html="verse.html"></div>
+        </div>
+    </ion-content>
+</ion-view>

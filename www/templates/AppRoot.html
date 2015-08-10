@@ -1,0 +1,31 @@
+<ion-side-menus enable-menu-with-back-views="false">
+    <ion-side-menu-content>
+
+        <ion-nav-bar class="bar-stable">
+            <ion-nav-back-button>
+            </ion-nav-back-button>
+
+            <ion-nav-buttons side="left">
+                <button class="button button-icon button-clear ion-navicon" menu-toggle="left"></button>
+            </ion-nav-buttons>
+            <ion-nav-buttons side="right">
+                <!-- button class="button button-icon button-clear ion-ios-book-outline" ng-click="OpenSideMenu('/app/search')"></button>
+                <button class="button button-icon button-clear ion-android-search" ng-click="OpenSideMenu('/app/search')"></button -->
+                <button class="button button-icon button-clear ion-ios-book-outline"></button>
+                <button class="button button-icon button-clear ion-android-search"></button>
+            </ion-nav-buttons>
+        </ion-nav-bar>
+
+        <ion-nav-view name="menuContent">
+        </ion-nav-view>
+
+    </ion-side-menu-content>
+
+    <ion-side-menu side="left" expose-aside-when="large">
+        <ion-header-bar class="bar-dark">
+        </ion-header-bar>
+        <ion-nav-view name="leftMenu">
+        </ion-nav-view>
+    </ion-side-menu>
+
+</ion-side-menus>
