@@ -21,18 +21,24 @@ bibleMod.controller('PassageCtrl', ['$scope', 'BibleDB', '$ionicScrollDelegate',
 
     var StyleVerse = function(verse, index, array) {
         var heading = '';
-        var matches = verse.VerseText.match(/%(.*)%/);
+        var description = '';
+        var headingMatches = verse.VerseText.match(/%(.*?)%/);
+        var descriptionMatches = verse.VerseText.match(/#(.*?)#/);
 
-        if(matches) {
-            heading = matches[0].replace(/%(.*)%/, '<span class="verseHeader">$1</span>');
+        if(headingMatches) {
+            heading = headingMatches[0].replace(/%(.*?)%/, '<span class="verseHeader">$1</span>');
         }
 
-        var html = verse.VerseText.replace(/%(.*)% /, '');
+        if(descriptionMatches) {
+            description = descriptionMatches[0].replace(/#(.*?)#/, '<span class="description">$1</span>');
+        }
+
+        var html = verse.VerseText.replace(/(%|#)(.*?)(%|#)\s*/g, '');
         html = html.replace(/{(.*?)}/g, '<span class="implied">$1</span>');
         html = html.replace(/\|(.*?)\|/g, '<span class="wordsOfChrist">$1</span>');
         html = html.replace(/``/g, '&quot;')
         html = html.replace(/`/g, '&#39;')
-        verse.html = heading + '<p><span class="verseNumber">' + verse.VerseName + '</span> ' + html + '</p>';
+        verse.html = heading + '<p>' + description + '</p><p><span class="verseNumber">' + verse.VerseName + '</span> ' + html + '</p>';
     };
 
     $scope.IncrementChapter = function() {

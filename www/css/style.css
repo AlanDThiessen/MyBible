@@ -1,5 +1,9 @@
 /* Empty. Add your own CSS if you like */
 
+.description {
+    font-style: italic;
+}
+
 .wordsOfChrist {
     color: #b3002a;
 }

@@ -4,7 +4,7 @@
 
 angular.module('BibleDB', ['ionic']).factory('BibleDB', ['$rootScope', '$window', function($rootScope, $window) {
     var myBible = {};
-    var DB_NAME = "nasb.db";
+    var DB_NAME = "web.db";
     var db;
     var books = [];
     var verses = [];
@@ -12,7 +12,7 @@ angular.module('BibleDB', ['ionic']).factory('BibleDB', ['$rootScope', '$window'
         division: 1,
         book: 1,
         chapter: 1,
-        index: -1,
+        index: -1
     };
 
 
@@ -70,6 +70,8 @@ angular.module('BibleDB', ['ionic']).factory('BibleDB', ['$rootScope', '$window'
 
     var RetrieveBookNames = function() {
         RunQuery('SELECT * FROM BookNames ORDER BY Division, Book;', undefined, function(tx, res) {
+
+
             books = [];
             for(var cntr = 0; cntr < res.rows.length; cntr++) {
                 books.push(res.rows.item(cntr));

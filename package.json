@@ -1,7 +1,7 @@
 {
   "name": "mybible",
   "version": "1.0.0",
-  "description": "MyBible: An Ionic project",
+  "description": "MyBible: A simple, functional Bible program.",
   "dependencies": {
     "gulp": "^3.5.6",
     "gulp-sass": "^1.3.3",
