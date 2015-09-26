@@ -8,11 +8,10 @@
             <ion-nav-buttons side="left">
                 <button class="button button-icon button-clear ion-navicon" menu-toggle="left"></button>
             </ion-nav-buttons>
+
             <ion-nav-buttons side="right">
-                <!-- button class="button button-icon button-clear ion-ios-book-outline" ng-click="OpenSideMenu('/app/search')"></button>
-                <button class="button button-icon button-clear ion-android-search" ng-click="OpenSideMenu('/app/search')"></button -->
-                <button class="button button-icon button-clear ion-ios-book-outline"></button>
-                <button class="button button-icon button-clear ion-android-search"></button>
+                <button class="button button-icon button-clear ion-ios-book-outline" ng-click="OpenSideMenu('bookSelect')"></button>
+                <button class="button button-icon button-clear ion-android-search" ng-click="OpenSideMenu('search')"></button>
             </ion-nav-buttons>
         </ion-nav-bar>
 
@@ -25,6 +24,7 @@
         <ion-header-bar class="bar-dark">
         </ion-header-bar>
         <ion-nav-view name="leftMenu">
+            <div ng-include="currentTab.path"></div>
         </ion-nav-view>
     </ion-side-menu>
 

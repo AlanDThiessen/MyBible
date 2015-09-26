@@ -1,8 +1,22 @@
 
 
 angular.module('starter.controllers', []).controller('AppCtrl', function($scope, $location, $ionicSideMenuDelegate) {
-    $scope.OpenSideMenu = function(url) {
-        $location.path(url);
+    const tabs = {
+        bookSelect: {
+            title: 'Select Book',
+            path: 'templates/BookSelector.html'
+        },
+
+        search: {
+            title: 'Search',
+            path: 'templates/search.html'
+        }
+    };
+
+    $scope.currentTab = tabs.bookSelect;
+
+    $scope.OpenSideMenu = function(tab) {
+        $scope.currentTab = tabs[tab];
         $ionicSideMenuDelegate.toggleLeft(true);
     };
 });

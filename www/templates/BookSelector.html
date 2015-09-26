@@ -1,11 +1,11 @@
-<ion-view view-title="Select">
-    <ion-content>
+<ion-view view-title="{{currentTab.path}}">
+    <ion-content ng-controller="BookSelectCtrl">
         <div class="row">
             <div class="col col-75">
                 <button class="button button-block button-positive" ng-click="ResetSelect()">{{select.name}}</button>
             </div>
             <div class="col col-25">
-                <button class="button button-block button-positive" ng-click="SelectBook($parent.selectedBook.Division, $parent.selectedBook.Book)">{{chapter}}</button>
+                <button class="button button-block button-positive" ng-click="SelectBook(selectedBook.Division, selectedBook.Book)">{{chapter}}</button>
             </div>
         </div>
         <div class="row" style="flex-wrap: wrap;" ng-if="select.state=='book'">
