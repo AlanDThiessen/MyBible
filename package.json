@@ -16,5 +16,6 @@
   },
   "cordovaPlugins": [
     "io.litehelpers.cordova.sqlitestorage"
-  ]
+  ],
+  "cordovaPlatforms": []
 }
