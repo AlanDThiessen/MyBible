@@ -5,7 +5,6 @@
 
     var dependencies = [
         'ionic',
-        'starter.controllers',
         'BibleDB',
         'BibleControllers'
     ];
